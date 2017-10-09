@@ -14,7 +14,7 @@ For example, if you decide to implement a REST API, this could be a route to ret
 curl -X GET localhost:5000/queries
 ["ec8ca", "429f6", "3f2d9", "07ea2", "cd505", "329b8", ...]
 
-curl -X POST -H "Content-Type: application/json" -d '{"my_filter":"2017"}' localhost:5000/query/ec8ca?k
+curl -X POST -H "Content-Type: application/json" -d '{"my_filter":"2017"}' localhost:5000/query/ec8ca
 [...]
 ```
 
