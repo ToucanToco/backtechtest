@@ -2,7 +2,7 @@
 Back test for technical interview
 You're going to implement an API Server in Python exposing data stored in a mongo database. The mongo queries are stored in a configuration file in CSON format `config.cson`. This config file contains many informations, which are not relevant to the backend. All the queries are stored behind keys called `query` throughout the file.
 
-## Exercice.
+## Exercice
 We expect the server to read the configuration file, extract all the queries and associate them a unique id.
 This id will be used in 2 functionalities :
   * list all the ids of the mongo queries stored in the `config.cson`
@@ -30,4 +30,4 @@ or in comments :
   * portability (easy to install)
   * postprocess
 
-Of course we don't expect you to do everything. It is up to you to choose what seems the most relevant for the beta release !
+Of course we don't expect you to do everything. It is up to you to choose what seems the most relevant for the beta release ! :stuck_out_tongue_winking_eye:
