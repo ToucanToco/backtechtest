@@ -30,4 +30,4 @@ or in comments :
   * portability (easy to install)
   * postprocess
 
-Of course we don't expect you to do everything. It is up to you to choose what seems the most relevant for the beta release ! :stuck_out_tongue_winking_eye:
+Of course we don't expect you to do everything. It is up to you to choose what seems the most relevant for the beta release !
