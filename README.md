@@ -11,11 +11,13 @@ informations which are not relevant to the backend. All the queries will
 be stored behind keys called `query` throughout the file.
 
 ```cson
+...
 chartOption:
   chartType: waterfall
   query:
     domain: waterfall_data
     qty: $gt : 4
+...
 ```
 
 The client side Toucan software will use this configuration to render a
@@ -55,7 +57,8 @@ For the sake of testing we provide a docker image, which starts the database and
 some fixtures needed for the **first** query. All the other queries could be executed
 but shouldn't return any result as the needed fixtures aren't available.
 
-For example, if you decide to implement a REST API, this could be a route to retrieve all the ids :
+For example, if you decide to implement a REST API, this could work like
+this:
 ```bash
 curl -X GET localhost:5000/queries
 ["ec8ca", "429f6", "3f2d9", "07ea2", "cd505", "329b8", ...]
@@ -67,13 +70,13 @@ curl -X POST -H "Content-Type: application/json" -d '{"my_filter":"2017"}' local
 Of course you are free to implement any type of API (GraphQL, SOAP...) and any framework you want !
 
 ## What we are going to look at
-The exercice section bellow is the project requirements. But we are interested to see how you would adress
+The exercice section above is the project requirements. But we are interested to see how you would adress
 the following points either in code or in comments :
   * authentification
   * performance
   * tests
   * doc (a good README is more than enough)
   * portability (easy to install)
-  * postprocess
+  * `postprocess` functionality (cf. the `config.cson` file)
 
 Of course we don't expect you to do everything. It is up to you to choose what seems the most relevant for the beta release !
