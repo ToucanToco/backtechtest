@@ -1,4 +1,4 @@
-# Back test for technical interview.
+# Backend test for technical interview.
 
 Your objective is to build a short API that will allow Toucan app
 developpers to get data from a mongo database. The queries are
