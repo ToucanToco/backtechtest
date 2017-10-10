@@ -22,7 +22,7 @@ The client side Toucan software will use this configuration to render a
 waterfall type of chart using data coming from the following query:
 
 ```json
-db.collection.find( { domain: "watrefall_data", qty: { $gt: 4 } } )
+db.collection.find( { "domain": "watrefall_data", "qty": { "$gt": 4 } } )
 ```
 
 For security reasons, we can't let the client send queries to the
