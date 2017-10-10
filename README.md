@@ -24,7 +24,7 @@ The client side Toucan software will use this configuration to render a
 waterfall type of chart using data coming from the following query:
 
 ```json
-db.collection.find( { "domain": "watrefall_data", "qty": { "$gt": 4 } } )
+db.collection.find( { "domain": "waterfall_data", "qty": { "$gt": 4 } } )
 ```
 
 For security reasons, we can't let the client send queries to the
@@ -64,7 +64,9 @@ curl -X GET localhost:5000/queries
 ["ec8ca", "429f6", "3f2d9", "07ea2", "cd505", "329b8", ...]
 
 curl -X POST -H "Content-Type: application/json" -d '{"my_filter":"2017"}' localhost:5000/query/ec8ca
-[...]
+[
+  {}, // all the docs in the query results
+]
 ```
 
 Of course you are free to implement any type of API (GraphQL, SOAP...) and any framework you want !
