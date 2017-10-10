@@ -49,6 +49,10 @@ And on the backend we have a mapping from this id to the original query:
 We expect the server to read the `config.cson` configuration file provided
 here, extract all the queries and associate them a unique id.
 
+> Note: this `config.cson` file is taken from a real project, so it is
+> big and messy. Still it is valid CSON and what we you need from it is
+> only the `query` keys.
+
 This id will be used in 2 functionalities :
   * list all the ids of the mongo queries stored in the `config.cson`
   * get the result of one mongo query given the id and required parameters interpolated.
@@ -79,6 +83,10 @@ the following points either in code or in comments :
   * tests
   * doc (a good README is more than enough)
   * portability (easy to install)
-  * `postprocess` functionality (cf. the `config.cson` file)
+  * if you fancy and have time, have a look at the `postprocess` functionality
+    (https://docs.toucantoco.com/concepteur/data-sources/02-data-query.html#post-process)
+we are interested in know how you would go about implementing it.
 
-Of course we don't expect you to do everything. It is up to you to choose what seems the most relevant for the beta release !
+**Of course we don't expect you to do everything**
+
+It is up to you to choose what seems the most relevant for the beta release !
