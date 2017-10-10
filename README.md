@@ -87,6 +87,6 @@ the following points either in code or in comments :
     (https://docs.toucantoco.com/concepteur/data-sources/02-data-query.html#post-process)
 we are interested in know how you would go about implementing it.
 
-**Of course we don't expect you to do everything**
+**We don't expect you to implement everything.** We really don't.
 
 It is up to you to choose what seems the most relevant for the beta release !
