@@ -39,7 +39,7 @@ chartOption:
   query: sPgH45F
 ```
 
-And on the backend we have a mapping from this ID to the original query:
+And on the backend we have a mapping from this id to the original query:
 
 ```python
 {'sPgH45F': {'domain': 'waterfall_data', 'qty': {'$gt': 4}}}
