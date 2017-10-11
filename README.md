@@ -2,12 +2,12 @@
 
 Your objective is to build a short API that will allow Toucan app
 developpers to get data from a mongo database. The queries are
-stored in the backend and given an id which the front end uses to
+stored in the backend and given an id, which the front end uses to
 get data.
 
 Toucan app developpers configure their apps in large CSON files, they
 want to add mongo queries to these files. The config files contains many
-informations which are not relevant to the backend. All the queries will
+informations, which are not relevant to the backend. All the queries will
 be stored behind keys called `query` throughout the file.
 
 ```cson
@@ -50,14 +50,14 @@ We expect the server to read the `config.cson` configuration file provided
 here, extract all the queries and associate them a unique id.
 
 > Note: this `config.cson` file is taken from a real project, so it is
-> big and messy. Still it is valid CSON and what we you need from it is
+> big and messy. Still it is valid CSON and what you willnneed from it is
 > only the `query` keys.
 
 This id will be used in 2 functionalities :
   * list all the ids of the mongo queries stored in the `config.cson`
   * get the result of one mongo query given the id and required parameters interpolated.
 
-For the sake of testing we provide a docker image, which starts the database and insert
+For the sake of testing we provide a docker image, which starts the database and inserts
 some fixtures needed for the **first** query. All the other queries could be executed
 but shouldn't return any result as the needed fixtures aren't available.
 
@@ -73,7 +73,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"my_filter":"2017"}' local
 ]
 ```
 
-Of course you are free to implement any type of API (GraphQL, SOAP...) and any framework you want !
+Of course you are free to implement any type of API (GraphQL, SOAP...) with any framework you want !
 
 ## What we are going to look at
 The exercice section above is the project requirements. But we are interested to see how you would adress
@@ -85,7 +85,7 @@ the following points either in code or in comments :
   * portability (easy to install)
   * if you fancy and have time, have a look at the `postprocess` functionality
     (https://docs.toucantoco.com/concepteur/data-sources/02-data-query.html#post-process)
-we are interested in know how you would go about implementing it.
+we are interested in knowing how you would implement it.
 
 **We don't expect you to implement everything.** We really don't.
 
