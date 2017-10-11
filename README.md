@@ -92,7 +92,7 @@ docker run --rm -i -p 27017:27017 toucantoco/backtechtest
 ## What we are going to look at
 The exercice section above is the project requirements. But we are interested to see how you would adress
 the following points either in code or in comments :
-  * authentification
+  * authentication
   * performance
   * tests
   * doc (a good README is more than enough)
