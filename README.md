@@ -50,7 +50,7 @@ We expect the server to read the `config.cson` configuration file provided
 here, extract all the queries and associate them a unique id.
 
 > Note: this `config.cson` file is taken from a real project, so it is
-> big and messy. Still it is valid CSON and what you willnneed from it is
+> big and messy. Still it is valid CSON and what you will need from it is
 > only the `query` keys.
 
 This id will be used in 2 functionalities :
