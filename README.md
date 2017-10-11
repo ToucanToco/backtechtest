@@ -82,8 +82,8 @@ docker pull toucantoco/backtechtest
 docker run --rm -i -p 27017:27017 toucantoco/backtechtest
 ```
 
-db: "mytest"
-collection: "mycoll"
+* db: "mytest"
+* collection: "mycoll"
 
 ## What we are going to look at
 The exercice section above is the project requirements. But we are interested to see how you would adress

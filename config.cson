@@ -1,7 +1,7 @@
 ﻿settings:[
   query:
     domain: "toucant_test"
-    filter: "<%= my_filter %>"
+    filter: "{{ my_filter }}"
 ]
 sharingOptions: true
 slidePdfEnabled: true
@@ -170,7 +170,7 @@ slides: [
               "Secteur": "3SECD004"
               "Format": "3MUD006"
               View: "MONTH"
-              "Libellé Entité": "<%= requestersManager.pays %>"
+              "Libellé Entité": "{{ requestersManager.pays }}"
               Origine: "30SA-CALC"
           ,
             $addFields:
@@ -185,7 +185,7 @@ slides: [
               "Code Entité": $nin: ["3RUDASIAADP", "3RUDEURADP", "3RUDAMLAADP", "3RUDFRA09"]
               "Secteur": "3SECD004"
               "Format": "3MUD006"
-              "Libellé Entité": "<%= requestersManager.pays %>"
+              "Libellé Entité": "{{ requestersManager.pays }}"
               View: "MONTH"
               Origine: "30SA-CALC"
           ,
@@ -813,7 +813,7 @@ slides: [
               Flux: "Y99"
               Origine: "30SA-IFRS"
               "Code Entité": "3RUD2100"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               type: $subtract: [0, 1]
@@ -833,7 +833,7 @@ slides: [
               Flux: "Y99"
               Origine: "30SA-CALC"
               "Code Entité": "3RUDFRAADP"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -866,7 +866,7 @@ slides: [
               Exrecice: "SALES"
               Origine: "30SA-CALC"
               "Code Entité": "3RUDFRAADP"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -920,7 +920,7 @@ slides: [
               Flux: "Y99"
               Origine: "30SA-CALC"
               "Code Entité": $in: ["3RUDAMLAADP", "3RUDASIAADP", "3RUDEURADP"]
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -965,7 +965,7 @@ slides: [
               Flux: "Y99"
               Origine: "30SA-CALC"
               "Code Entité": $nin: ["3RUD2100","3RUDFRA09", "3RUDFRAADP", "3RUDAMLAADP", "3RUDASIAADP", "3RUDEURADP"]
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -1046,7 +1046,7 @@ slides: [
               Format: "3MUD006"
               Exrecice: "SALES"
               "Code Entité": "3RUD2100"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -1079,7 +1079,7 @@ slides: [
               Exrecice: "SALES"
               Origine: "30SA-CALC"
               "Code Entité": "3RUD2100"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -1113,7 +1113,7 @@ slides: [
               Exrecice: "SALES"
               Origine: "30SA-CALC"
               "Code Entité": "3RUD2100"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -1153,7 +1153,7 @@ slides: [
               Format: "3MUD006"
               Exrecice: "SALES"
               "Code Entité": "3RUD2100"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -1185,7 +1185,7 @@ slides: [
               Flux: "Y99"
               Origine: "30SA-CALC"
               "Code Entité": "3RUD2100"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -1227,7 +1227,7 @@ slides: [
               Flux: "Y99"
               Origine: "30SA-IFRS"
               "Code Entité": "3RUD2100"
-              View: "<%= requestersManager.period.View %>"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               type: $sum: [0, -1]
@@ -1306,7 +1306,7 @@ slides: [
             Flux: "Y99"
             Exrecice: "SALES"
             Origine: "30SA-CALC"
-            View: "<%= requestersManager.period.View %>"
+            View: "{{ requestersManager.period.View }}"
             "Code Entité": "3RUD2100"
           field: "Montant"
           postprocess:[
@@ -1334,7 +1334,7 @@ slides: [
             Flux: "Y99"
             Exrecice: "SALES"
             Origine: "30SA-CALC"
-            View: "<%= requestersManager.period.View %>"
+            View: "{{ requestersManager.period.View }}"
             "Code Entité": "3RUD2100"
           field: "Montant"
           postprocess:[
@@ -3763,7 +3763,7 @@ slides: [
               domain: "actual"
               Format: "3MUD000"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TXH"
               Origine: "30A-IFRS"
               Exrecice: "A"
@@ -3780,7 +3780,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Format: "3MUD000"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300CONTRI"
               Origine: "30A-COUNTRY1"
               Exrecice: "A"
@@ -3798,7 +3798,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Format: "3MUD000"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300EFMIX"
               Origine: "30A-IFRS"
               Exrecice: "A"
@@ -3815,7 +3815,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Format: "3MUD000"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TX"
               Origine: "30A-IFRS"
               Exrecice: "A"
@@ -3834,7 +3834,7 @@ slides: [
               domain: "forecast"
               "Période": $in: [ "2016.12",2016.12]
               Format: "3MUD000"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TX"
               Origine: "30F-IFRS"
               Exrecice: "FORECAST"
@@ -3851,7 +3851,7 @@ slides: [
               domain: "forecast"
               "Période": $in: [ "2016.12",2016.12]
               Format: "3MUD000"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300CONTRI"
               Origine: "30F-COUNTRY1"
               Exrecice: "FORECAST"
@@ -3869,7 +3869,7 @@ slides: [
               domain: "forecast"
               "Période": $in: [ "2016.12",2016.12]
               Format: "3MUD000"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300EFMIX"
               Origine: "30F-IFRS"
               Exrecice: "FORECAST"
@@ -3886,7 +3886,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Format: "3MUD000"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TX"
               Origine: "30A-IFRS"
               Exrecice: "A"
@@ -4022,7 +4022,7 @@ slides: [
               Format: "3MUD000"
               Compte: $in: ["3TR310TXVH", "3TR310VH"]
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               "View": $ne: "MONTH"
           ,
             $group:
@@ -4062,7 +4062,7 @@ slides: [
               Format: "3MUD000"
               Compte: $in: ["3TR310TXVF", "3TR310VF"]
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               # "Libellé entité ": "Groupe"
               # "Libellé": "Variation FP vs N-1 %"
               "View": $ne: "MONTH"
@@ -4174,7 +4174,7 @@ slides: [
               Format: "3MUD000"
               Compte: $in: ["3TR330TXVH", "3TR330VH"]
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               "View": $ne: "MONTH"
           ,
             $group:
@@ -4214,7 +4214,7 @@ slides: [
               Format: "3MUD000"
               Compte: $in: ["3TR330TXVF", "3TR330VF"]
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               # "Libellé entité ": "Groupe"
               # "Libellé": "Variation FP vs N-1 %"
               "View": $ne: "MONTH"
@@ -4699,7 +4699,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Flux: "Y99"
               Secteur: "Tous secteurs"
@@ -4719,7 +4719,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4741,7 +4741,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4763,7 +4763,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4784,7 +4784,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4805,7 +4805,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4826,7 +4826,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4847,7 +4847,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4868,7 +4868,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4891,7 +4891,7 @@ slides: [
              $match:
                domain: 'actual'
                "Période":"2016.12"
-               # "Libellé Entité": "<%= report.entityName %>"
+               # "Libellé Entité": "{{ report.entityName }}"
                Exrecice: "A"
                Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                Format: "3MUD000"
@@ -4912,7 +4912,7 @@ slides: [
              $match:
                domain: 'actual'
                "Période":"2016.12"
-               # "Libellé Entité": "<%= report.entityName %>"
+               # "Libellé Entité": "{{ report.entityName }}"
                Exrecice: "A"
                Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                Format: "3MUD000"
@@ -4934,7 +4934,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4954,7 +4954,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4975,7 +4975,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -4996,7 +4996,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -5017,7 +5017,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -5038,7 +5038,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -5059,7 +5059,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -5080,7 +5080,7 @@ slides: [
             $match:
               domain: 'actual'
               "Période":"2016.12"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -5100,7 +5100,7 @@ slides: [
           [
             $match:
               domain: 'actual'
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -5123,7 +5123,7 @@ slides: [
              $match:
                domain: 'actual'
                "Période":"2016.12"
-               # "Libellé Entité": "<%= report.entityName %>"
+               # "Libellé Entité": "{{ report.entityName }}"
                Exrecice: "A"
                Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                Format: "3MUD000"
@@ -5144,7 +5144,7 @@ slides: [
              $match:
                domain: 'actual'
                "Période":"2016.12"
-               # "Libellé Entité": "<%= report.entityName %>"
+               # "Libellé Entité": "{{ report.entityName }}"
                Exrecice: "A"
                Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                Format: "3MUD000"
@@ -5171,7 +5171,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "R50000"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5182,7 +5182,7 @@ slides: [
                   Compte: "3R5000H"
                   Flux: "Y99"
                   Secteur: "Tous secteurs"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5238,7 +5238,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "TR210"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5247,7 +5247,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR210VH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5302,7 +5302,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR205"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5311,7 +5311,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR205VH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5366,7 +5366,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "TR310"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5375,7 +5375,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR310VH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5430,7 +5430,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR350"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5439,7 +5439,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR350VH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5494,7 +5494,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "TR340"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5503,7 +5503,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR340VH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5558,7 +5558,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "TR400"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5567,7 +5567,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR400VH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5622,7 +5622,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "TR160"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5631,7 +5631,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR160VH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5686,7 +5686,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "TR180N"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5695,7 +5695,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR180NVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5748,7 +5748,7 @@ slides: [
               Compte: "3TR160VHCR"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
               Format: "3MUD000"
@@ -5770,7 +5770,7 @@ slides: [
               Compte: "3TR180NVHCR"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
               Format: "3MUD000"
@@ -5795,7 +5795,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR210TX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5804,7 +5804,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR210TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5857,7 +5857,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR205TX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5866,7 +5866,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR205TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5919,7 +5919,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR310TX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5928,7 +5928,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR310TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -5981,7 +5981,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR350TX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -5990,7 +5990,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR350TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -6043,7 +6043,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR340TX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -6052,7 +6052,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR340TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -6105,7 +6105,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR400TX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -6114,7 +6114,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR400TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -6167,7 +6167,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR160TX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -6176,7 +6176,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR160TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -6229,7 +6229,7 @@ slides: [
                 {
                   'domain': 'actual'
                   Compte: "3TR180NTX"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "A"
                   Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
                   Format: "3MUD000"
@@ -6238,7 +6238,7 @@ slides: [
                 {
                   'domain': 'forecast'
                   Compte: "3TR180TXVH"
-                  # "Libellé Entité": "<%= report.entityName %>"
+                  # "Libellé Entité": "{{ report.entityName }}"
                   Exrecice: "FORECAST"
                   Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
                   Format: "3MUD000"
@@ -6289,7 +6289,7 @@ slides: [
               "Période": $in: [ "2016.12",2016.12]
               'domain': 'forecast'
               Compte: "3TR160TXVHCR"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
               Format: "3MUD000"
@@ -6309,7 +6309,7 @@ slides: [
               'domain': 'forecast'
               "Période": $in: [ "2016.12",2016.12]
               Compte: "3TR180NTXVHCR"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
               Format: "3MUD000"
@@ -6709,7 +6709,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               # Origine: $in: ["30A-IFRS", "30F-COUNTRY1"]
           ,
@@ -6728,7 +6728,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
           ,
             $addFields:
@@ -6746,7 +6746,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
           ,
             $addFields:
@@ -6764,7 +6764,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
           ,
             $addFields:
@@ -6782,7 +6782,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
           ,
             $addFields:
@@ -6800,7 +6800,7 @@ slides: [
               Compte: "3AND-FCF-B"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Format: "Tous Formats"
           ,
@@ -6819,7 +6819,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
           ,
             $addFields:
@@ -6837,7 +6837,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
           ,
             $addFields:
@@ -6855,7 +6855,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
           ,
             $addFields:
@@ -6873,7 +6873,7 @@ slides: [
               Format: "Tous Formats"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
           ,
             $addFields:
@@ -7003,7 +7003,7 @@ slides: [
           [
             $match:
               domain:"actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3SCF7010ADP", "3SCF7010ADPH"]
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
               Exrecice: "A"
@@ -7018,7 +7018,7 @@ slides: [
           [
             $match:
               domain:"forecast"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3SCF7010ADP", "3SCF7010ADPH"]
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
               Exrecice: "FORECAST"
@@ -7113,7 +7113,7 @@ slides: [
               "Période":"2016.12"
               Compte: "3AND-FCF-BH"
               Secteur: "Tous secteurs"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               # Origine: $in: ["30A-IFRS", "30F-COUNTRY1"]
           ,
@@ -7129,7 +7129,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Compte: $in: ["3SCF1000ADPV", "3SCF1100ADP"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Secteur: "Tous secteurs"
           ,
@@ -7145,7 +7145,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Compte: $in: ["3SCF1300VH", "3SCF3006ADPV", "3SCF3058ADPV"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Secteur: "Tous secteurs"
           ,
@@ -7161,7 +7161,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Compte: $in: ["3AN1-SCF3VH", "3AN1-SCF4VH", "3AN1-SCF2VH"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Secteur: "Tous secteurs"
           ,
@@ -7177,7 +7177,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Compte: "3AND-FCF-B"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Secteur: "Tous secteurs"
           ,
@@ -7197,7 +7197,7 @@ slides: [
               domain: "forecast"
               "Période":"2016.12"
               Compte: "3AND-FCF-B"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Secteur: "Tous secteurs"
           ,
@@ -7213,7 +7213,7 @@ slides: [
               domain: "forecast"
               "Période":"2016.12"
               Compte: $in: ["3AN1-SCF1VF", "3SCF1000ADPF"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Secteur: "Tous secteurs"
           ,
@@ -7229,7 +7229,7 @@ slides: [
               domain: "forecast"
               "Période":"2016.12"
               Compte: $in: ["3SCF3058ADPF", "3SCF3006ADPF","3SCF1300VF"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Secteur: "Tous secteurs"
           ,
@@ -7245,7 +7245,7 @@ slides: [
               domain: "forecast"
               "Période":"2016.12"
               Compte: $in: ["3AN1-SCF3VF", "3AN1-SCF4VF", "3AN1-SCF2VF"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "FORECAST"
               Secteur: "Tous secteurs"
           ,
@@ -7261,7 +7261,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Compte: "3AND-FCF-B"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Exrecice: "A"
               Secteur: "Tous secteurs"
           ,
@@ -8026,7 +8026,7 @@ slides: [
               Flux: "Y99"
               Secteur: "Tous secteurs"
               # "Origine": "30A-IFRS"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               order: $literal: 1
@@ -8042,7 +8042,7 @@ slides: [
               Secteur: "Tous secteurs"
               Compte: $in: ["3SCF5045ADP", "3SCF1200ADP", "3AND-FCF-B", "3AN1-SCF6", "3AN1-SCF5"]
               # "Origine": "30A-IFRS"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               order: $literal: 2
@@ -8058,7 +8058,7 @@ slides: [
               Flux: "Y99"
               Secteur: "Tous secteurs"
               # "Origine": "30A-IFRS"
-              # "Libellé Entité": "<%= report.entityName %>"
+              # "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               order: $literal: 3
@@ -8265,7 +8265,7 @@ slides: [
               Compte: "3XR55LFLTX"
               "Code Entité": $nin: ["3RUD2100", "3RUDASIAADP", "3RUDEURADP", "3RUDAMLAADP"]
               "Secteur": "3SECD004"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in: [
                 "3MUD006"
                 "3MUD1000"
@@ -8293,7 +8293,7 @@ slides: [
               Compte: "3XR55TXEH1"
               "Code Entité": $nin: ["3RUDASIAADP", "3RUDEURADP", "3RUDAMLAADP", "3RUDFRA09"]
               "Secteur": "3SECD004"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in: [
                 "3MUD006"
                 "3MUD1000"
@@ -8363,7 +8363,7 @@ slides: [
         query:
           domain:"SA"
           "Période":"2016.12"
-          "Libellé Entité": "<%= report.entityName %>"
+          "Libellé Entité": "{{ report.entityName }}"
           Compte: $in: ["3XR55LFLTX","3XR55LFLTXVH"]
           "Code Entité": $nin: ["3RUDASIAADP", "3RUDEURADP", "3RUDAMLAADP"]
           "Secteur": "3SECD004"
@@ -8382,14 +8382,14 @@ slides: [
           rename:
             values:
               "Petrol excluded":
-                en: "<%= report.entityName %>"
-                fr: "<%= report.entityName %>"
+                en: "{{ report.entityName }}"
+                fr: "{{ report.entityName }}"
         ]
         order:
           by: "Libellé Format"
-          defaultSelected: "<%= report.entityName %>"
+          defaultSelected: "{{ report.entityName }}"
           custom: [
-            "<%= report.entityName %>"
+            "{{ report.entityName }}"
             "Hyper"
             "Super"
             "Proxi"
@@ -8427,7 +8427,7 @@ slides: [
         data:
           query:
             domain:"SA"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             Compte: $in: ["3XR55LFLTX","3XR55LFLTXVH"]
             "Secteur": "3SECD004"
             "Libellé Format": $in: ["Petrol excluded","Hyper", "Super", "Proxi", "Autres","C&C"]
@@ -8437,8 +8437,8 @@ slides: [
             rename:
               values:
                 "Petrol excluded":
-                  en: "<%= report.entityName %>"
-                  fr: "<%= report.entityName %>"
+                  en: "{{ report.entityName }}"
+                  fr: "{{ report.entityName }}"
           ]
           precision:
             "Evo LFL net (hors TWRK & Cal) groupe vs histo %": '.1f'
@@ -8471,7 +8471,7 @@ slides: [
               Flux: "Y99"
               "Format": $in: ["3MUD006","3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -8491,7 +8491,7 @@ slides: [
               Flux: "Y99"
               "Format": $in: ["3MUD006","3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -8525,7 +8525,7 @@ slides: [
               Flux: "Y99"
               "Format": $in: ["3MUD006","3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -8574,8 +8574,8 @@ slides: [
                 en: "EPCS"
                 fr: "EPCS"
               "Tous Formats":
-                en: "<%= report.entityName %>"
-                fr: "<%= report.entityName %>"
+                en: "{{ report.entityName }}"
+                fr: "{{ report.entityName }}"
         ]
         multiple_queries: true
       chartType:'horizontal-barchart'
@@ -8624,7 +8624,7 @@ slides: [
             Format: $in: ["3MUD1000","3MUD1100", "3MUD1200","3MUD1300"]
             Exrecice: "SALES"
             Origine: "30SA-CALC"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
         ,
           $addFields:
             order:
@@ -8711,8 +8711,8 @@ slides: [
               Format: "3MUD006"
               Flux: "Y99"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               type: $subtract: [0, 1]
@@ -8731,8 +8731,8 @@ slides: [
               Format: "3MUD006"
               Flux: "Y99"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -8764,8 +8764,8 @@ slides: [
               Flux: "Y99"
               Exrecice: "SALES"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -8824,8 +8824,8 @@ slides: [
               ]
               Secteur: "3SECD004"
               Format: "3MUD006"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -8856,8 +8856,8 @@ slides: [
               Format: "3MUD006"
               Flux: "Y99"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -8890,8 +8890,8 @@ slides: [
               Flux: "Y99"
               Exrecice: "SALES"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -8929,8 +8929,8 @@ slides: [
               ]
               Secteur: "3SECD004"
               Format: "3MUD006"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -8961,8 +8961,8 @@ slides: [
               Format: "3MUD006"
               Flux: "Y99"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               Montantabs: $abs: '$Montant'
@@ -8995,8 +8995,8 @@ slides: [
               Format: "3MUD006"
               Flux: "Y99"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
-              View: "<%= requestersManager.period.View %>"
+              "Libellé Entité": "{{ report.entityName }}"
+              View: "{{ requestersManager.period.View }}"
           ,
             $addFields:
               type: $sum: [0, -1]
@@ -9075,8 +9075,8 @@ slides: [
             Format: "3MUD006"
             Flux: "Y99"
             Origine: "30SA-CALC"
-            View: "<%= requestersManager.period.View %>"
-            "Libellé Entité": "<%= report.entityName %>"
+            View: "{{ requestersManager.period.View }}"
+            "Libellé Entité": "{{ report.entityName }}"
           field: "Montant"
 
     ,
@@ -9101,8 +9101,8 @@ slides: [
             Flux: "Y99"
             "Période":"2016.12"
             Origine: "30SA-CALC"
-            View: "<%= requestersManager.period.View %>"
-            "Libellé Entité": "<%= report.entityName %>"
+            View: "{{ requestersManager.period.View }}"
+            "Libellé Entité": "{{ report.entityName }}"
           field: "Montant"
 
 
@@ -9281,7 +9281,7 @@ slides: [
               Format: "3MUD000"
               Flux: "Y99"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               type: $subtract: [0, 1]
@@ -9303,7 +9303,7 @@ slides: [
               Flux: "Y99"
               Exrecice: "SALES"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               type: $literal: "parent"
@@ -9323,7 +9323,7 @@ slides: [
               Flux: "Y99"
               Exrecice: "SALES"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               type: $literal: "parent"
@@ -9399,7 +9399,7 @@ slides: [
               Format: "3MUD000"
               Exrecice: "SALES"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               type: $literal: "parent"
@@ -9418,7 +9418,7 @@ slides: [
               Format: "3MUD000"
               Flux: "Y99"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               type: $subtract: [0, 1]
@@ -9479,7 +9479,7 @@ slides: [
             "Format": $in:["3MUD1010","3MUD1110"]
             View: "MONTH"
             Origine: "30SA-CALC"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
         ]
         date:
           'format': "%Y.%m"
@@ -9522,7 +9522,7 @@ slides: [
               "Période":"2016.12"
               Compte: $in: [ "3XR60I", "3XR60M", "3XR60ITXVH", "3XR60MTXVH"]
               Secteur: "Total"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               Montant: $divide: ["$Montant", 1000]
@@ -9630,7 +9630,7 @@ slides: [
             "Période":"2016.12"
             Compte: $in: ["3XR60PDS", "3XR60TXVH"]
             Secteur: $in: ["Food", "Non Food", "Services"]
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             Montant: $ne: 0
         ]
 
@@ -9677,7 +9677,7 @@ slides: [
             domain: "VA"
             Compte: "3XR62"
             Secteur: "Total"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             View: "MONTH"
             "Période": $in:[
               "2016.09"
@@ -9707,7 +9707,7 @@ slides: [
             domain: "VA"
             Compte: "3XR61"
             Secteur: "Total"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             View: "MONTH"
             "Période": $in:[
               "2016.09"
@@ -9783,7 +9783,7 @@ slides: [
             Compte: "3XR64"
             Secteur: "Total"
             View: "MONTH"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             "Période": $in:[
               "2016.09"
               "2016.10"
@@ -9812,7 +9812,7 @@ slides: [
             Compte: "3XR61"
             Secteur: "Total"
             View: "MONTH"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             "Période": $in:[
               "2016.09"
               "2016.10"
@@ -9883,7 +9883,7 @@ slides: [
             Compte: "3XR66"
             Secteur: "Total"
             View: "MONTH"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             "Période": $in:[
               "2016.09"
               "2016.10"
@@ -9915,7 +9915,7 @@ slides: [
             Compte: "3XR61"
             Secteur: "Total"
             View: "MONTH"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             "Période": $in:[
               "2016.09"
               "2016.10"
@@ -9988,7 +9988,7 @@ slides: [
             Compte: "3XR63"
             Secteur: "Total"
             View: "MONTH"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             "Période": $in:[
               "2016.09"
               "2016.10"
@@ -10020,7 +10020,7 @@ slides: [
             Compte: "3XR65"
             Secteur: "Total"
             View: "MONTH"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             "Période": $in:[
               "2016.09"
               "2016.10"
@@ -10117,7 +10117,7 @@ slides: [
               Compte: "3TR210TX"
               Secteur: "3SECD004"
               Flux: "Y99"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
           ,
             $project:
@@ -10143,7 +10143,7 @@ slides: [
               Compte: "3TR210TXH"
               Secteur: "3SECD004"
               Flux: "Y99"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
           ,
             $project:
@@ -10169,7 +10169,7 @@ slides: [
               Compte: "3TR210TX"
               Secteur: "3SECD004"
               Flux: "Y99"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
           ,
             $project:
@@ -10195,7 +10195,7 @@ slides: [
               Compte: "3TR210TX"
               Secteur: "3SECD004"
               Flux: "Y99"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
           ,
             $project:
@@ -10285,7 +10285,7 @@ slides: [
               "Période":"2016.12"
               Origine: $in:["30A-COUNTRY1", "30A-IFRS"]
               Compte: $in: ["3TR210TXH", "3TR210TX", "3TR210TXVH"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in: ["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
           ,
             $addFields:
@@ -10298,7 +10298,7 @@ slides: [
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
               Compte: $in: ["3TR210TX", "3TR210TXVH"]
               Format: $in: ["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               'Libellé': $concat: ["$Libellé","$Exrecice"]
@@ -10331,8 +10331,8 @@ slides: [
                 'fr': 'Var vs obj'
             values:
               "All formats":
-                fr: "<%= report.entityName %>"
-                en: "<%= report.entityName %>"
+                fr: "{{ report.entityName }}"
+                en: "{{ report.entityName }}"
 
         ]
         precision:
@@ -10344,7 +10344,7 @@ slides: [
         order:
           by: "Libellé Format"
           custom:[
-            "<%= report.entityName %>"
+            "{{ report.entityName }}"
             "Tous formats"
             "Hyper"
             "Hyper int."
@@ -10406,7 +10406,7 @@ slides: [
           [
             $match:
               domain: "actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période":"2016.12"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: "3TR210H"
@@ -10422,7 +10422,7 @@ slides: [
           [
             $match:
               domain: "actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période":"2016.12"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: $in: ["3TR211EFV", "3TR211EFMIX", "3TR211EFTX"]
@@ -10439,7 +10439,7 @@ slides: [
             $match:
               domain: "actual"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: $in: ["3XP2101VH", "3XP2103VH", "3XP2105VH"]
               Origine: $in: ["30A-COUNTRY1", "30A-IFRS"]
@@ -10455,7 +10455,7 @@ slides: [
             $match:
               domain: "actual"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: $in: ["3XTP200VH", "3XP2102VH", "3TR210XR"]
               Origine: $in: ["30A-COUNTRY1", "30A-IFRS","30A-COUN-BUD"]
@@ -10472,7 +10472,7 @@ slides: [
               domain: "actual"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "TR210"
               Origine: $in: ["30A-COUNTRY1", "30A-IFRS"]
               Exrecice: "A"
@@ -10487,7 +10487,7 @@ slides: [
             $match:
               domain: "forecast"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: "TR210"
               Origine: $in: ["30F-COUNTRY1", "30F-IFRS"]
@@ -10503,7 +10503,7 @@ slides: [
             $match:
               domain: "forecast"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: $in: ["3TR211EFV", "3TR211EFMIX", "3TR211EFTX"]
               Origine: $in: ["30F-COUNTRY1", "30F-IFRS"]
@@ -10519,7 +10519,7 @@ slides: [
             $match:
               domain: "forecast"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: $in: ["3XP2101VH", "3XP2103VH", "3XP2105VH"]
               Origine: $in: ["30F-COUNTRY1", "30F-IFRS"]
@@ -10535,7 +10535,7 @@ slides: [
             $match:
               domain: "forecast"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
               Compte: $in: ["3XTP200VH", "3XP2102VH", "3TR210XR"]
               Origine: $in: ["30F-COUNTRY1", "30F-IFRS","30F-RATE-BGT","30F-COUN-BUD"]
@@ -10551,7 +10551,7 @@ slides: [
             $match:
               domain: "actual"
               Format: $in:["3MUD000","3MUD1000", "3MUD1100", "3MUD1200","3MUD1300", "3MUD1010", "3MUD1020", "3MUD1110", "3MUD1120", "3MUD1210", "3MUD1220"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période":"2016.12"
               Compte: "TR210"
               Origine: $in: ["30A-COUNTRY1", "30A-IFRS"]
@@ -10680,7 +10680,7 @@ slides: [
             Secteur: "3SECT1010"
             Format: $in: ["FORM1011", "FORM1111"]
             Origine: "30A-ADPLC"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
         ,
           $addFields:
             order:
@@ -10758,7 +10758,7 @@ slides: [
             Secteur: "3SECT1010"
             Format: $in: ["FORM1011", "FORM1111"]
             Origine: "30A-ADPLC"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             View: "MONTH"
           postprocess:[
             rename:
@@ -10797,7 +10797,7 @@ slides: [
             $match:
               domain:"actual"
               Compte: "3XR5103TX"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Flux: "Y99"
               Format: $in:["FORM1011", "FORM1111"]
           ,
@@ -10829,7 +10829,7 @@ slides: [
             $match:
               domain:"actual"
               Compte:  "3XTR514TX"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Flux: "Y99"
               Format: $in:["FORM1011", "FORM1111"]
           ,
@@ -10913,7 +10913,7 @@ slides: [
         query:
           domain: "actual"
           "Période":"2016.12"
-          "Libellé Entité": "<%= report.entityName %>"
+          "Libellé Entité": "{{ report.entityName }}"
           Exrecice: "A"
 
           Compte: "3XTP200TXVH"
@@ -10923,8 +10923,8 @@ slides: [
           rename:
             values:
               "All formats":
-                fr: "<%= report.entityName %>"
-                en: "<%= report.entityName %>"
+                fr: "{{ report.entityName }}"
+                en: "{{ report.entityName }}"
               "HYPER INTEG OPE":
                 fr: "Hyper int"
                 en: "Hyper int"
@@ -10994,7 +10994,7 @@ slides: [
             $match:
               domain: 'scorecard'
               ecran: "pl"
-              consolidation: "<%= requestersManager.requester_consolidation %>"
+              consolidation: "{{ requestersManager.requester_consolidation }}"
           ,
             $addFields:
               unit: $literal : " €/colis "
@@ -11003,7 +11003,7 @@ slides: [
             $match:
               domain: 'scorecard'
               ecran: "pl"
-              consolidation: "<%= requestersManager.requester_consolidation %>"
+              consolidation: "{{ requestersManager.requester_consolidation }}"
           ,
             $addFields:
               unit: $literal : " % CA "
@@ -11050,7 +11050,7 @@ slides: [
               View: "YTD"
               Secteur: "Tous secteurs"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.01"
           ,
             $addFields:
@@ -11065,7 +11065,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11082,7 +11082,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11099,7 +11099,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11116,7 +11116,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11133,7 +11133,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11150,7 +11150,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11167,7 +11167,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11184,7 +11184,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-CALC"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11201,7 +11201,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ,
             $addFields:
@@ -11241,7 +11241,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ]
           postprocess:[
@@ -11271,7 +11271,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ]
           postprocess:[
@@ -11300,7 +11300,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ]
           postprocess:[
@@ -11329,7 +11329,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ]
           postprocess:[
@@ -11358,7 +11358,7 @@ slides: [
               Secteur: "Tous secteurs"
               View: "YTD"
               Origine: "30SA-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               "Période": "2016.12"
           ]
           postprocess:[
@@ -11417,7 +11417,7 @@ slides: [
           [
             $match:
               domain:"actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               View: "MONTH"
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
               Exrecice:"A"
@@ -11433,7 +11433,7 @@ slides: [
             $match:
               domain:"forecast"
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               View: "MONTH"
               Exrecice:"FORECAST"
               Origine: $in: ["30F-IFRS", "30F-COUNTRY1"]
@@ -11449,7 +11449,7 @@ slides: [
             $match:
               domain:"actual"
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               View: "MONTH"
               Exrecice:"A"
               Origine: $in: ["30A-IFRS", "30A-COUNTRY1"]
@@ -11463,7 +11463,7 @@ slides: [
           [
             $match:
               domain:"actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               View: "MONTH"
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
               Exrecice:"A"
@@ -11538,7 +11538,7 @@ slides: [
               domain: $in: ["actual", "forecast"]
               "Période": $in: [ "2016.12",2016.12]
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3TR300TX", "3TR300TXH"]
               Origine: $in: ["30A-COUNTRY1", "30F-COUNTRY1"]
               # Secteur: "Tous secteurs"
@@ -11650,7 +11650,7 @@ slides: [
               domain: "actual"
               "Période":"2016.12"
               Format: "3MUD000"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TXH"
               Origine: "30A-COUNTRY1"
               Exrecice: "A"
@@ -11666,7 +11666,7 @@ slides: [
             $match:
               domain: "actual"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300CONTRI"
               Origine: "30A-COUNTRY1"
               Format: $in: [ "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300", "3MUD048"]
@@ -11684,7 +11684,7 @@ slides: [
             $match:
               domain: "actual"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300EFMIX"
               Origine: "30A-COUNTRY1"
               Format: "3MUD000"
@@ -11701,7 +11701,7 @@ slides: [
             $match:
               domain: "actual"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TX"
               Format: "3MUD000"
               Origine: "30A-COUNTRY1"
@@ -11720,7 +11720,7 @@ slides: [
             $match:
               domain: "forecast"
               "Période": $in: [ "2016.12",2016.12]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TX"
               Format: "3MUD000"
               Origine: "30F-COUNTRY1"
@@ -11737,7 +11737,7 @@ slides: [
             $match:
               domain: "forecast"
               "Période": $in: [ "2016.12",2016.12]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300CONTRI"
               Origine: "30F-COUNTRY1"
               Format: $in: [ "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300", "3MUD048"]
@@ -11755,7 +11755,7 @@ slides: [
             $match:
               domain: "forecast"
               "Période": $in: [ "2016.12",2016.12]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300EFMIX"
               Format: "3MUD000"
               Origine: "30F-COUNTRY1"
@@ -11772,7 +11772,7 @@ slides: [
             $match:
               domain: "actual"
               "Période": "2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: "3TR300TX"
               Format: "3MUD000"
               Origine: "30A-COUNTRY1"
@@ -11849,7 +11849,7 @@ slides: [
             domain: "actual"
             Compte: "3TR300TXVH"
             "Période":"2016.12"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             Origine: "30A-COUNTRY1"
             Exrecice: "A"
             Format: "3MUD000"
@@ -11874,7 +11874,7 @@ slides: [
           query:
             domain: "forecast"
             Compte: "3TR300TXVH"
-            "Libellé Entité": "<%= report.entityName %>"
+            "Libellé Entité": "{{ report.entityName }}"
             Origine: "30F-COUNTRY1"
             Exrecice: "FORECAST"
             Format: "3MUD000"
@@ -11907,7 +11907,7 @@ slides: [
             $match:
               domain: $in: ["actual", "forecast"]
               "Période": $in: [ "2016.12",2016.12]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Origine:$in:["30A-COUNTRY1", "30F-COUNTRY1"]
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
               Compte: $in: ["TR160", "3TR160H"]
@@ -11922,7 +11922,7 @@ slides: [
             $match:
               domain: $in: ["actual", "forecast"]
               "Période": $in: [ "2016.12",2016.12]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Origine:$in:["30A-COUNTRY1", "30A-IFRS", "30F-COUNTRY1", "30F-IFRS"]
               Compte: $in: ["3TR160TXVH", "3TR160TXVF"]
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
@@ -12031,7 +12031,7 @@ slides: [
               "Période":"2016.12"
               Origine:$in:["30A-COUNTRY1", "30A-IFRS", "30F-COUNTRY1", "30F-IFRS"]
               Compte: $in: ["3TR180NH", "3TR180N"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
               # 'Libellé': $in:["ROC - Recurring operating result", "ROC  N-1",'Variation ROC vs N-1 %', 'Variation ROC vs Budget %']
               # "Période":"2016.12"
@@ -12047,7 +12047,7 @@ slides: [
               Origine:$in:["30A-COUNTRY1", "30A-IFRS", "30F-COUNTRY1", "30F-IFRS"]
               Compte: $in: ["3TR180NTXVF", "3TR180NTXVH"]
               Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               # 'Libellé': $in:["ROC - Recurring operating result", "ROC  N-1",'Variation ROC vs N-1 %', 'Variation ROC vs Budget %']
               # "Période":"2016.12"
           ,
@@ -12153,7 +12153,7 @@ slides: [
             $match:
               domain:"actual"
               "Période":"2016.12"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3TMJVH", "3CRJVH", "3DFJVH", "3STJVH"]
               Exrecice: "A"
               Flux: "Y99"
@@ -12170,7 +12170,7 @@ slides: [
               "Période":"2016.12"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3TMJVH", "3CRJVH", "3DFJVH", "3STJVH"]
               Exrecice: "FORECAST"
               Format: "Tous Formats"
@@ -12240,7 +12240,7 @@ slides: [
           [
             $match:
               domain:"actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAPVH","3CAP"]
               Origine: "30A-COUNTRY1"
               # Format: $in: ["3MUD000", "3MUD1000", "3MUD1100", "3MUD1200", "3MUD1300"]
@@ -12289,7 +12289,7 @@ slides: [
           [
             $match:
               domain:"actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAP-EXP", "3CAP-EXPVH"]
               Origine: "30A-COUNTRY1"
               Format: "3MUD000"
@@ -12341,7 +12341,7 @@ slides: [
           [
             $match:
               domain:"actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAP-REM", "3CAP-REMVH"]
               Origine: "30A-COUNTRY1"
               Format: "3MUD000"
@@ -12393,7 +12393,7 @@ slides: [
           [
             $match:
               domain:"actual"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAP-AUT", "3CAP-AUTVH"]
               Origine: "30A-COUNTRY1"
               Format: "3MUD000"
@@ -12447,7 +12447,7 @@ slides: [
             $match:
               "Période": $in: [ "2016.12",2016.12]
               domain: $in: ["actual","forecast"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAPVF","3CAP"]
               Origine: $in: ["30F-COUNTRY1", "30A-COUNTRY1"]
               Format: "3MUD000"
@@ -12497,7 +12497,7 @@ slides: [
               "Période": $in: [ "2016.12",2016.12]
               domain: $in: ["actual","forecast"]
               Origine: $in: ["30F-COUNTRY1", "30A-COUNTRY1"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAP-EXP", "3CAP-EXPVF"]
               Format: "3MUD000"
           ,
@@ -12550,7 +12550,7 @@ slides: [
               "Période": $in: [ "2016.12",2016.12]
               domain: $in: ["actual","forecast"]
               Origine: $in: ["30F-COUNTRY1", "30A-COUNTRY1"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAP-REM", "3CAP-REMVF"]
               Format: "3MUD000"
           ,
@@ -12603,7 +12603,7 @@ slides: [
               "Période": $in: [ "2016.12",2016.12]
               domain: $in: ["actual","forecast"]
               Origine: $in: ["30F-COUNTRY1", "30A-COUNTRY1"]
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
               Compte: $in: ["3CAP-AUT", "3CAP-AUTVF"]
               Format: "3MUD000"
           ,
@@ -12716,7 +12716,7 @@ slides: [
               # "Origine": "30A-IFRS"
               Flux: "Y99"
               Secteur: "Tous secteurs"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               order: $literal: 1
@@ -12731,7 +12731,7 @@ slides: [
               Secteur: "Tous secteurs"
               Compte: $in: ["3SCF5045ADP", "3SCF1200ADP", "3AND-FCF-B", "3AN1-SCF6", "3AN1-SCF5"]
               # "Origine": "30A-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               order: $literal: 2
@@ -12746,7 +12746,7 @@ slides: [
               Flux: "Y99"
               Secteur: "Tous secteurs"
               # "Origine": "30A-IFRS"
-              "Libellé Entité": "<%= report.entityName %>"
+              "Libellé Entité": "{{ report.entityName }}"
           ,
             $addFields:
               order: $literal: 3
