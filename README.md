@@ -75,6 +75,16 @@ curl -X POST -H "Content-Type: application/json" -d '{"my_filter":"2017"}' local
 
 Of course you are free to implement any type of API (GraphQL, SOAP...) with any framework you want !
 
+## Connecting to the mongo database
+
+```bash
+docker pull toucantoco/backtechtest
+docker run --rm -i -p 27017:27017 toucantoco/backtechtest
+```
+
+db: "mytest"
+collection: "mycoll"
+
 ## What we are going to look at
 The exercice section above is the project requirements. But we are interested to see how you would adress
 the following points either in code or in comments :
