@@ -104,3 +104,9 @@ we are interested in knowing how you would implement it.
 **We don't expect you to implement everything.** We really don't.
 
 It is up to you to choose what seems the most relevant for the beta release !
+
+## Useful links
+
+* https://github.com/avakar/pycson
+* http://jinja.pocoo.org/docs/2.9/
+
