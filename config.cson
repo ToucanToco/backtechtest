@@ -1,7 +1,7 @@
 ﻿settings:[
   query:
-    domain: "toucant_test"
-    filter: "{{ my_filter }}"
+    domain: "test_domain"
+    my_key: "{{ my_filter }}"
 ]
 sharingOptions: true
 slidePdfEnabled: true
