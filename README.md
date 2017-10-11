@@ -63,6 +63,7 @@ but shouldn't return any result as the needed fixtures aren't available.
 
 For example, if you decide to implement a REST API, this could work like
 this:
+
 ```bash
 curl -X GET localhost:5000/queries
 ["ec8ca", "429f6", "3f2d9", "07ea2", "cd505", "329b8", ...]
@@ -76,6 +77,9 @@ curl -X POST -H "Content-Type: application/json" -d '{"my_filter":"2017"}' local
 Of course you are free to implement any type of API (GraphQL, SOAP...) with any framework you want !
 
 ## Connecting to the mongo database
+
+If you have docker installed we provide and image that contains fixtures
+to test the first query found in `config.cson`.
 
 ```bash
 docker pull toucantoco/backtechtest
