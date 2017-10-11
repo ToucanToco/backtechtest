@@ -78,7 +78,7 @@ Of course you are free to implement any type of API (GraphQL, SOAP...) with any 
 
 ## Connecting to the mongo database
 
-If you have docker installed we provide and image that contains fixtures
+If you have docker installed we provide an image that contains fixtures
 to test the first query found in `config.cson`.
 
 ```bash
