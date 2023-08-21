@@ -21,3 +21,5 @@ async def run_query(query: QueryInput):
                 )
             ).fetchall()
             return data
+
+# Test with curl -X POST -H "Content-Type: application/json" -d '{"table": "persons"}' localhost:8000/query
